@@ -1,0 +1,20 @@
+.spinner:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 calc(50% - 25px);
+  border-radius: 50%;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #fff35a transparent #fff35a transparent;
+  animation: spinning 1s linear infinite;
+}
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

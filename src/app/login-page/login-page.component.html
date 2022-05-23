@@ -1,0 +1,10 @@
+<div class="container">
+  <form>
+    <input type="text" placeholder="Username" [(ngModel)]="username" name="username" class="{{ validationError.username ? 'invalid' : '' }}"/>
+    <div class="error" *ngIf="validationError.username">{{ validationError.username }}</div>
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" class="{{ validationError.password ? 'invalid' : '' }}"/>
+    <div class="error" *ngIf="validationError.password">{{ validationError.password }}</div>
+    <input type="button" value="Login" (click)="login()" [disabled]="loading"/>
+  </form>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>

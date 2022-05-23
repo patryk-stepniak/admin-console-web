@@ -1,0 +1,43 @@
+.table {
+  width: 50%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.row.header {
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.row > * {
+  flex: 1;
+  text-align: center;
+}
+
+.row > div:last-child > Input {
+  margin: 0 2px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 50px;
+}
+
+.panel > * {
+  margin: 5px 0;
+}
+
+.panel > div > input {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+#toggleUserCreationButton.on {
+  background-color: aquamarine;
+}

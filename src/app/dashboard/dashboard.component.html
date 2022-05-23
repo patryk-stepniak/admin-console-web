@@ -1,0 +1,31 @@
+<div class="panel">
+  <div>
+    <input type="button" id="toggleUserCreationButton" value="New user"
+           *ngIf="!loading" (click)="toggleUserCreation()" [class.on]="userCreation"/>
+    <input type="button" value="Logout" (click)="logout()"/>
+  </div>
+  <div *ngIf="userCreation">
+    <input type="text" placeholder="Enter username" [(ngModel)]="newUsername"/>
+    <input type="button" value="Save" (click)="createNewUser()"/>
+  </div>
+</div>
+<div class="table">
+  <div class="row header">
+    <div>Username</div>
+    <div>Status</div>
+    <div>Actions</div>
+  </div>
+  <div class="row">
+
+    <app-spinner *ngIf="loading"></app-spinner>
+  </div>
+  <div class="row" *ngFor="let user of users">
+    <div>{{ user.username }}</div>
+    <div>{{ user.active ? 'Active' : 'Blocked' }}</div>
+    <div>
+      <Input type="button" value="Delete" (click)="deleteUser(user.username)"/>
+      <Input type="button" value="{{ user.active ? 'Block': 'Activate' }}"
+             (click)="toggleUser(user.username, !user.active)"/>
+    </div>
+  </div>
+</div>
